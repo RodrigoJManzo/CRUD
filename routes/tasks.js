@@ -15,7 +15,7 @@ router.get(`/productos/:id`, async (req, res)=>{
         const tarea = await tareas.obtenerPorID(id)
         return res.render(`tasks/pordID`)
     } catch (error) {
-        console.log(error)
+        console.log(`no se ha encontrado ningun producto ${error}`)
     }
     
 })
@@ -23,7 +23,7 @@ router.get(`/productos/:id`, async (req, res)=>{
 router.get(`/deletle/:id`, async (res, req)=>{
     const {id} = req.params;
     await tareas.deletle(id)
-    res.redirect(`/productos`)
+    res.redirect(`/tasks/productos`)
 })
 
 router.get("/create", (req, res) => {
@@ -39,7 +39,7 @@ router.post("/create", async (req,res)=>{
     try {
         const { title, price, thumbnail} = req.body;
         await tareas.create({title, price, thumbnail})
-        res.redirect(`/productos`)
+        res.redirect(`/tasks/productos`)
     } catch (error) {
         console.log(`error ${error} al crear el nuevo producto`)
     }

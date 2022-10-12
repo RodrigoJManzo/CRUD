@@ -1,8 +1,8 @@
 const fs = require ('fs');
 class CRUD { 
-    nombreClase = `crud`
+    nombreClase = `CRUD`
     constructor(nombreArchivo){
-        this.nombreArchivo = __dirname + '/';
+        this.nombreArchivo = nombreArchivo;
     }
 
     //Guardado de Productos
