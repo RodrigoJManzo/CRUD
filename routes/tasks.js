@@ -26,15 +26,19 @@ router.get(`/deletle/:id`, async (res, req)=>{
     res.redirect(`/tasks/productos`)
 })
 
-router.post(`/create`, async (req,res)=>{
+router.get("/create", (req, res) => {
+    const formInfo={
+      botonName:"Crear",
+      metodo:"POST",
+      url:"/tasks/create"
+    }
+    res.render("tasks/formulario",formInfo);
+  });
+
+router.post(`/tasks/formulario`, async (req,res)=>{
     try {
         const { title, price, thumbnail} = req.body;
         await tareas.create({title, price, thumbnail})
-        const formInfo={
-            botonName:"Crear",
-            metodo:"POST",
-            url:"/tasks/create"}
-        res.redirect(`/tasks/prodID`);
     } catch (error) {
         console.log(`error ${error} al crear el nuevo producto`)
     }
