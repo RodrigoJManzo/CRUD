@@ -22,7 +22,7 @@
               name="price"
               class="form-control"
               placeholder="Cual es el Precio"
-              rows="3"
+              rows="1"
             >{{task.precio}}</textarea>
           </div>
           <div>
@@ -34,7 +34,7 @@
               rows="3"
             >{{task.thumbnail}}</textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block" formmethod="{{metodo}}">
           {{botonName}}
           </button>
         </form>
