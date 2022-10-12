@@ -1,0 +1,14 @@
+{{!-- LISTA CON LAS TARJETAS PARA CADA PRODUCTO  --}}
+
+<div class="row">
+  {{#if tareas.length}}
+    {{#each tareas}}
+      <div class="col-md-3">
+          {{> tarjetaProducto }}
+      </div>
+    {{/each}}
+  {{else}}
+    <p class="text-black display-3 text-center my-5">No Hay Productos aun.... espero</p>
+  {{/if}}
+
+</div>

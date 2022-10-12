@@ -1,0 +1,43 @@
+{{!-- FORMULARIO PARA CREACION Y EDICION DE PRODUCTOS --}}
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card bg-light">
+      <div class="card-body">
+        <form action="{{url}}" method="{{metodo}}">
+          <div class="mb-3">
+            <label for="title">Producto:</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Nombre del Producto"
+              class="form-control"
+              value="{{task.title}}"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="price">Precio:</label>
+            <textarea
+              name="price"
+              class="form-control"
+              placeholder="Cual es el Precio"
+              rows="3"
+            >{{task.precio}}</textarea>
+          </div>
+          <div>
+            <label for="thumbnail">Url de thumbnail:</label>
+            <textarea
+              name="thumbnail"
+              class="form-control"
+              placeholder="URL de Thumbnail"
+              rows="3"
+            >{{task.thumbnail}}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+          {{botonName}}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
