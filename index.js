@@ -1,5 +1,5 @@
 const express = require(`express`)
-import { router } from `./routes/api`;
+const { router } = require(`./routes/api.js`);
 
 
 const app = express();
@@ -14,7 +14,7 @@ app.listen(PORT, ()=>{
 
 
 
-const apiRouter = router
+const apiRouter = require (`./routes/api`)
 app.use(`/`, apiRouter)
 
 app.use(`/formulario`, express.static(`public`))

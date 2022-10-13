@@ -24,7 +24,7 @@ router.get(`/api/productos/:id`, async (req, res)=>{
 })
 
 // metodo para eliminar un producto
-router.deletle(`/api/deletle/:id`, async (res, req)=>{
+router.delete(`/api/deletle/:id`, async (res, req)=>{
     const {id} = req.params.id;
     const producto = req.body
     objeto.id = parseInt(id)
