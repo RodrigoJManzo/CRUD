@@ -6,14 +6,14 @@ const productos = [
     {
         title: "nombre",
         price: "precio",
-        thumbnail: "foto del producto en URL"
+        thumbnail: "foto del producto en URL",
+        id: 0
     }
 ]
 
 // metodo get para obtener los productos del array
 router.get(`/api/productos`, async(req, res)=>{
-    const task = await tareas.getAll()
-    res.send(productos)
+        res.send(productos)
 })
 
 // metodo get para obtener por el ID
