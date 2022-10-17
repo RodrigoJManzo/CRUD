@@ -1,5 +1,6 @@
-const {Router} = require (`express`);
-const router = Router();
+// const {Router} = require (`express`);
+const {Router, Request, Response} = require(`express`);
+const apiRoutes = Router();
 
 // Creo el array con un producto standard
 const productos = [
@@ -12,19 +13,24 @@ const productos = [
 ]
 
 // metodo get para obtener los productos del array
-router.get(`/api/productos`, async(req, res)=>{
-        res.send(productos)
+apiRoutes.get(`/api/productos`, (req, res)=>{
+    const datos = {
+        title : productos.title,
+        price: productos.price,
+        thumbnail: productos.thumbnail
+    }
+        res.render(`listaProductos`);
 })
 
 // metodo get para obtener por el ID
-router.get(`/api/productos/:id`, async (req, res)=>{
+apiRoutes.get(`/api/productos/:id`,(req, res)=>{
     const {id} = req.params;
     const elemento = productos.find((elemento)=>elemento.id==id)
     res.send(elemento == undefined ? "producto no encontrado" : elemento) 
 })
 
 // metodo para eliminar un producto
-router.delete(`/api/deletle/:id`, async (res, req)=>{
+apiRoutes.delete(`/api/deletle/:id`, (res, req)=>{
     const {id} = req.params.id;
     const producto = req.body
     objeto.id = parseInt(id)
@@ -34,7 +40,7 @@ router.delete(`/api/deletle/:id`, async (res, req)=>{
 })
 
 // metodo para crear productos
-router.post("/api/productos", async (req,res)=>{
+apiRoutes.post("/api/productos", (req,res)=>{
     const elemento = req.body
     const id = productos.length === 0 ? 1 : productos[productos.length -1].id + 1;
     elemento.id = id
@@ -43,7 +49,7 @@ router.post("/api/productos", async (req,res)=>{
 })
 
 // modificar un producto
-router.put(`/api/productos/:id`, async (req, res)=>{
+apiRoutes.put(`/api/productos/:id`, (req, res)=>{
     const id = req.params.id
     const objeto = req.body
     objeto.id = parseInt(id)
@@ -52,4 +58,4 @@ router.put(`/api/productos/:id`, async (req, res)=>{
     res.send(modElemento)
 })
 
-module.exports = router;
+module.exports = apiRoutes;
