@@ -12,14 +12,17 @@
     <th class="tg-9wq8">Producto</th>
     <th class="tg-9wq8">Precio</th>
     <th class="tg-9wq8">Imagen</th>
+    <th class="tg-9wq8">Id</th>
   </tr>
 </thead>
 <tbody>
-    
-  <tr>
-    <td class="tg-9wq8">{{title}}</td>
-    <td class="tg-9wq8">{{price}}</td>
-    <td class="tg-9wq8">{{thumbnail}}</td>
-  </tr>
+    {{#each .}}
+    <tr>
+      <td class="tg-9wq8">{{title}}</td>
+      <td class="tg-9wq8">{{price}}</td>
+      <td class="tg-9wq8">{{thumbnail}}</td>
+      <td class="tg-9wq8">{{id}}</td>
+    </tr>
+    {{/each}}
 </tbody>
 </table>
