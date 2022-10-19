@@ -2,6 +2,7 @@ const express = require(`express`)
 const {create} = require (`express-handlebars`)
 
 const app = express();
+app.use(express.json())
 const PORT = process.env.PORT || 8080
 
 const hbs = create({
@@ -18,8 +19,8 @@ const apiError = require (`../routes/apiError.js`)
 app.use(`/`, indexRoutes)
 
 app.use(`/error/`, apiError)
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+
+app.use(express.urlencoded({extended: false}))
 
 
 app.listen(PORT, ()=>{
