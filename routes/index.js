@@ -29,10 +29,8 @@ indexroutes.get(`/productos/:id`,(req, res)=>{
 })
 
 // metodo para eliminar un producto
-indexroutes.delete(`/productos/deletle/:id`, (res, req)=>{
-    const {id} = req.params.id;
-    const producto = req.body
-    objeto.id = parseInt(id)
+indexroutes.delete(`/productos/deletle`, (res, req)=>{
+    const {id} = req.body
     const elemento = productos.find((elemento)=>elemento.id==id)
     const killElemento = productos.splice(id/1, 1)
     return res.render(`listaProductos`,killElemento)
@@ -48,7 +46,7 @@ indexroutes.post("/productos", (req,res)=>{
 })
 
 // modificar un producto
-indexroutes.put(`/productos/:id`, (req, res)=>{
+indexroutes.put(`/productos`, (req, res)=>{
     const id = req.params.id
     const objeto = req.body
     objeto.id = parseInt(id)
