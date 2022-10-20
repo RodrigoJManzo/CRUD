@@ -6,23 +6,24 @@
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
 </style>
+
 <table class="tg">
-<thead>
-  <tr>
-    <th class="tg-9wq8">Producto</th>
-    <th class="tg-9wq8">Precio</th>
-    <th class="tg-9wq8">Imagen</th>
-    <th class="tg-9wq8">Id</th>
-  </tr>
-</thead>
-<tbody>
-    {{#each .}}
+  <thead>
     <tr>
-      <td class="tg-9wq8">{{title}}</td>
-      <td class="tg-9wq8">{{price}}</td>
-      <td class="tg-9wq8"> <img id="thumbnail" src="{{thumbnail}}" alt style="width: 10rem"></td>
-      <td class="tg-9wq8">{{id}}</td>
+      <th class="tg-9wq8">Producto</th>
+      <th class="tg-9wq8">Precio</th>
+      <th class="tg-9wq8">Imagen</th>
+      <th class="tg-9wq8">Id</th>
     </tr>
-    {{/each}}
-</tbody>
+  </thead>
+  {{#each .}} 
+  <tbody> 
+      <tr>
+        <td class="tg-9wq8">{{title}}</td>
+        <td class="tg-9wq8">{{price}}</td>
+        <td class="tg-9wq8"> <img id="thumbnail" src="{{thumbnail}}" alt style="width: 10rem"></td>
+        <td class="tg-9wq8">{{id}}</td>
+      </tr>
+  </tbody>
+  {{/each}}
 </table>
