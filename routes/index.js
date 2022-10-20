@@ -29,7 +29,7 @@ indexroutes.get(`/productos/:id`,(req, res)=>{
 })
 
 // metodo para eliminar un producto
-indexroutes.delete(`/productos/deletle`, (res, req)=>{
+indexroutes.delete(`/productos/delete`, (res, req)=>{
     const {id} = req.body
     const elemento = productos.find((elemento)=>elemento.id==id)
     const killElemento = productos.splice(id/1, 1)
